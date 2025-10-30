@@ -26,6 +26,29 @@ playBtn.addEventListener("click", (ev) => {
   console.log(result);
 });
 
-// EVENTOS
+function revealWinner (player, computer) {
+    const startBtn = document.querySelector(".btnStart_js");
 
-// FUNCIONES
+  if (player === computer) {
+    startBtn.textContent = "Empate";
+  }
+
+else if (
+    (player === "rock" && computer === "scissors") ||
+    (player === "scissors" && computer === "paper") ||
+    (player === "paper" && computer === "rock" )
+) { 
+ startBtn.textContent = "¡Has ganado!";
+}
+    else {
+        startBtn.textContent = "¡Has perdido!";
+    }
+}
+
+
+
+   
+
+
+
+
