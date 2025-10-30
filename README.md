@@ -1,6 +1,8 @@
 🎮 Piedra, Papel o Tijera
 Un juego interactivo del clásico Piedra, Papel o Tijera desarrollado con HTML, CSS y JavaScript puro.
 
+Link a Git Pages: https://beta.adalab.es/modulo-2-evaluacion-intermedia-mcocapelaz/
+
 Descripción
 Este proyecto es una implementación del clásico juego de Piedra, Papel o Tijera donde el jugador compite contra la computadora. El juego incluye un sistema de puntuación, límite de rondas y reseteo automático.​
 
