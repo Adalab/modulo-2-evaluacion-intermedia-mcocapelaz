@@ -24,15 +24,15 @@ function getComputerChoice() {
   return result;
 }
 
-function revealWinner(player, computer) {
-  const startBtn = document.querySelector(".btnStart_js");
+function revealWinner(playerChoice, computerChoice) {
+const startBtn = document.querySelector(".btnStart_js");
 
-  if (player === computer) {
+  if (playerChoice === computerChoice) {
     startBtn.textContent = "Empate";
   } else if (
-    (player === "rock" && computer === "scissors") ||
-    (player === "scissors" && computer === "paper") ||
-    (player === "paper" && computer === "rock")
+    (playerChoice === "rock" && computerChoice === "scissors") ||
+    (playerChoice === "scissors" && computerChoice === "paper") ||
+    (playerChoice === "paper" && computerChoice === "rock")
   ) {
     startBtn.textContent = "¡Has ganado!";
   } else {
@@ -40,4 +40,11 @@ function revealWinner(player, computer) {
   }
 }
 
-playBtn.addEventListener("click", (ev) => {});
+playBtn.addEventListener("click", (ev) => {
+
+const playerChoice = document.querySelector('.select-choice_js').value;
+const computerChoice = getComputerChoice();
+console.log(playerChoice, computerChoice);
+revealWinner ()
+
+});
