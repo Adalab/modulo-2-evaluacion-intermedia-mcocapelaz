@@ -1,7 +1,6 @@
 //QUERY SELECTOR
 
 const playBtn = document.querySelector(".btn-play_js");
-const startBtn = document.querySelector(".btnStart_js");
 
 // VARIABLES
 
@@ -9,9 +8,8 @@ function getRandomNumber(max) {
   return 1 + parseInt(Math.random() * max);
 }
 
-playBtn.addEventListener("click", (ev) => {
+function getComputerChoice() {
   const randomNum = getRandomNumber(3);
-  console.log(randomNum);
 
   let result;
 
@@ -23,32 +21,23 @@ playBtn.addEventListener("click", (ev) => {
     result = "scissors";
   }
 
-  console.log(result);
-});
+  return result;
+}
 
-function revealWinner (player, computer) {
-    const startBtn = document.querySelector(".btnStart_js");
+function revealWinner(player, computer) {
+  const startBtn = document.querySelector(".btnStart_js");
 
   if (player === computer) {
     startBtn.textContent = "Empate";
-  }
-
-else if (
+  } else if (
     (player === "rock" && computer === "scissors") ||
     (player === "scissors" && computer === "paper") ||
-    (player === "paper" && computer === "rock" )
-) { 
- startBtn.textContent = "¡Has ganado!";
+    (player === "paper" && computer === "rock")
+  ) {
+    startBtn.textContent = "¡Has ganado!";
+  } else {
+    startBtn.textContent = "¡Has perdido!";
+  }
 }
-    else {
-        startBtn.textContent = "¡Has perdido!";
-    }
-}
 
-
-
-   
-
-
-
-
+playBtn.addEventListener("click", (ev) => {});
