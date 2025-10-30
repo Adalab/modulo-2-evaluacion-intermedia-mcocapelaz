@@ -1,8 +1,5 @@
-//QUERY SELECTOR
-
 const playBtn = document.querySelector(".btn-play_js");
-
-// VARIABLES
+const startBtn = document.querySelector(".btnStart_js");
 
 function getRandomNumber(max) {
   return 1 + parseInt(Math.random() * max);
@@ -25,8 +22,6 @@ function getComputerChoice() {
 }
 
 function revealWinner(playerChoice, computerChoice) {
-const startBtn = document.querySelector(".btnStart_js");
-
   if (playerChoice === computerChoice) {
     startBtn.textContent = "Empate";
   } else if (
@@ -41,10 +36,14 @@ const startBtn = document.querySelector(".btnStart_js");
 }
 
 playBtn.addEventListener("click", (ev) => {
+  const playerChoice = document.querySelector(".select-choice_js").value;
 
-const playerChoice = document.querySelector('.select-choice_js').value;
-const computerChoice = getComputerChoice();
-console.log(playerChoice, computerChoice);
-revealWinner ()
+  if (!playerChoice || playerChoice === "") {
+    alert("¡Selecciona tu jugada!");
+    return;
+  }
 
+  const computerChoice = getComputerChoice();
+  console.log(playerChoice, computerChoice);
+  revealWinner(playerChoice, computerChoice);
 });
